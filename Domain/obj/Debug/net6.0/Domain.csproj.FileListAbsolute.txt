@@ -1,0 +1,17 @@
+D:\thuctap_ntq\console\prac_clean\Domain\bin\Debug\net6.0\Domain.deps.json
+D:\thuctap_ntq\console\prac_clean\Domain\bin\Debug\net6.0\Domain.dll
+D:\thuctap_ntq\console\prac_clean\Domain\bin\Debug\net6.0\Domain.pdb
+D:\thuctap_ntq\console\prac_clean\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+D:\thuctap_ntq\console\prac_clean\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\thuctap_ntq\console\prac_clean\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+D:\thuctap_ntq\console\prac_clean\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+D:\thuctap_ntq\console\prac_clean\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+D:\thuctap_ntq\console\prac_clean\Domain\obj\Debug\net6.0\Domain.dll
+D:\thuctap_ntq\console\prac_clean\Domain\obj\Debug\net6.0\refint\Domain.dll
+D:\thuctap_ntq\console\prac_clean\Domain\obj\Debug\net6.0\Domain.pdb
+D:\thuctap_ntq\console\prac_clean\Domain\obj\Debug\net6.0\ref\Domain.dll
+D:\thuctap_ntq\console\prac_clean\Domain\bin\Debug\net6.0\Application.dll
+D:\thuctap_ntq\console\prac_clean\Domain\bin\Debug\net6.0\Infrastructure.dll
+D:\thuctap_ntq\console\prac_clean\Domain\bin\Debug\net6.0\Infrastructure.pdb
+D:\thuctap_ntq\console\prac_clean\Domain\bin\Debug\net6.0\Application.pdb
+D:\thuctap_ntq\console\prac_clean\Domain\obj\Debug\net6.0\Domain.csproj.CopyComplete

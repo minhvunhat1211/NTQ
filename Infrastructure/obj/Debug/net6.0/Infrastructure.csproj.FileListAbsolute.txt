@@ -1,0 +1,17 @@
+D:\thuctap_ntq\console\prac_clean\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
+D:\thuctap_ntq\console\prac_clean\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
+D:\thuctap_ntq\console\prac_clean\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
+D:\thuctap_ntq\console\prac_clean\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
+D:\thuctap_ntq\console\prac_clean\Infrastructure\bin\Debug\net6.0\Application.dll
+D:\thuctap_ntq\console\prac_clean\Infrastructure\bin\Debug\net6.0\Application.pdb
+D:\thuctap_ntq\console\prac_clean\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
+D:\thuctap_ntq\console\prac_clean\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\thuctap_ntq\console\prac_clean\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
+D:\thuctap_ntq\console\prac_clean\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
+D:\thuctap_ntq\console\prac_clean\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+D:\thuctap_ntq\console\prac_clean\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
+D:\thuctap_ntq\console\prac_clean\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
+D:\thuctap_ntq\console\prac_clean\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
+D:\thuctap_ntq\console\prac_clean\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
+D:\thuctap_ntq\console\prac_clean\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
+D:\thuctap_ntq\console\prac_clean\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
