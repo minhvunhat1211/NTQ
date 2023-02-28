@@ -17,12 +17,32 @@ namespace Domain.Features.UserSevice
 {
     public class UserService : IUserService
     {
-        private readonly IUserRepository USERREPOSITORY;
-        private readonly IConfiguration CONFIGURATION;
+        private readonly IUserRepository _userRepository;
+        private readonly IConfiguration _configuration;
         public UserService(IUserRepository userRepository, IConfiguration configuration)
         {
-            USERREPOSITORY = userRepository;
-            CONFIGURATION = configuration;
+            _userRepository = userRepository;
+            _configuration = configuration;
+        }
+
+        public async Task<ApiResult<bool>> EditAsync(int id, UserEditResquest editRequest)
+        {
+            try
+            {
+                var findUserById = await _userRepository.GetById(id);
+                findUserById.Email = editRequest.Email;
+                findUserById.LastName = editRequest.LastName;
+                findUserById.Firstname = editRequest.Firstname;
+                findUserById.Role= editRequest.Role;    
+                findUserById.UpdateAt = DateTime.Now;
+                await _userRepository.UpdateAsync(findUserById);
+                return new ApiSuccessResult<bool>();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public async Task<ApiResult<PagedResult<UserDTO>>> GetAll(int? pageSize, int? pageIndex, string search)
@@ -37,13 +57,13 @@ namespace Domain.Features.UserSevice
                 {
                     pageIndex = pageIndex.Value;
                 }
-                var totalRow = await USERREPOSITORY.CountAsync();
-                var query = await USERREPOSITORY.GetAll(pageSize, pageIndex);
+                var totalRow = await _userRepository.CountAsync();
+                var query = await _userRepository.GetAll(pageSize, pageIndex);
                 if (!string.IsNullOrEmpty(search))
                 {
                     Expression< Func <Infrastructure.Entities.User, bool>> expression = x => x.Email.Contains(search);
-                    query = await USERREPOSITORY.GetAll(pageSize, pageIndex, expression);
-                    totalRow = await USERREPOSITORY.CountAsync(expression);
+                    query = await _userRepository.GetAll(pageSize, pageIndex, expression);
+                    totalRow = await _userRepository.CountAsync(expression);
                 }
                 //Paging
                 var data = query.Skip((pageIndex.Value - 1) * pageSize.Value)
@@ -81,7 +101,7 @@ namespace Domain.Features.UserSevice
 
         public async Task<ApiResult<LoginResponse>> LoginAsync(LoginRequest loginRequest)
         {
-            var result = await USERREPOSITORY.GetByUserNameAsync(loginRequest.Email);
+            var result = await _userRepository.GetByUserNameAsync(loginRequest.Email);
             if (result == null)
             {
                 return new ApiErrorResult<LoginResponse>("Sai tai khoan hoac mat khau");
@@ -94,10 +114,10 @@ namespace Domain.Features.UserSevice
                 new Claim(JwtRegisteredClaimNames.Exp, "20"),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
-            var authenKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(CONFIGURATION["JWT:Secret"]));
+            var authenKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
             var token = new JwtSecurityToken(
-                    issuer: CONFIGURATION["JWT:ValidIssuer"],
-                    audience: CONFIGURATION["JWT:ValidAudience"],
+                    issuer: _configuration["JWT:ValidIssuer"],
+                    audience: _configuration["JWT:ValidAudience"],
                     expires: DateTime.Now.AddMinutes(20),
                     claims: authClaim,
                     signingCredentials: new SigningCredentials(authenKey, SecurityAlgorithms.HmacSha256Signature)
@@ -109,9 +129,27 @@ namespace Domain.Features.UserSevice
             };
             return new ApiSuccessResult<LoginResponse>(TokenResult);
         }
+
+        public async Task<ApiResult<bool>> DeleteAsync(int id)
+        {
+            try
+            {
+                var findUserById = await _userRepository.GetById(id);
+                findUserById.Status = 2;
+                await _userRepository.UpdateAsync(findUserById);
+                return new ApiSuccessResult<bool>(true);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+     
+        }
+
         public async Task<ApiResult<SignUpResponse>> SignUpAsync(SignUpRequest signUpRequest)
         {
-            var check = await USERREPOSITORY.GetByUserNameAsync(signUpRequest.Email);
+            var check = await _userRepository.GetByUserNameAsync(signUpRequest.Email);
             if (check != null) {
                 return new ApiErrorResult<SignUpResponse>("Tai khoan da ton tai");
             }
@@ -136,8 +174,53 @@ namespace Domain.Features.UserSevice
                 PassWord = newUser.PassWord,
                 Status = newUser.Status
             };
-            await USERREPOSITORY.CreateAsync(newUser);
+            await _userRepository.CreateAsync(newUser);
             return new ApiSuccessResult<SignUpResponse>(data);
+        }
+
+        public async Task<ApiResult<bool>> UnDeleteAsync(int id)
+        {
+            try
+            {
+                var findUserById = await _userRepository.GetById(id);
+                findUserById.Status = 1;
+                await _userRepository.UpdateAsync(findUserById);
+                return new ApiSuccessResult<bool>(true);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+        }
+
+        public async Task<ApiResult<UserDTO>> GetByIdAsync(int id)
+        {
+            try
+            {
+                var findById = await _userRepository.GetById(id);
+                var user = new UserDTO()
+                {
+                    Id= findById.Id,
+                    Email = findById.Email,
+                    Firstname = findById.Firstname,
+                    LastName = findById.LastName,
+                    CreateAt = findById.CreateAt,
+                    UpdateAt= findById.UpdateAt,
+                    DeleteAt= findById.DeleteAt,
+                    Role = findById.Role,
+                    PassWord = findById.PassWord,
+                    Status = findById.Status
+                };
+                return new ApiSuccessResult<UserDTO>(user);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            throw new NotImplementedException();
         }
     }
 }
