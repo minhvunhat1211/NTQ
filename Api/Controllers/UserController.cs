@@ -121,7 +121,6 @@ namespace Api.Controllers
 
                 return BadRequest($"Could not un delete {id}");
             }
-            throw new NotImplementedException();
         }
         [HttpGet("getbyid")]
         public async Task<IActionResult> GetById(int id)

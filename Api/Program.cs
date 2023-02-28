@@ -1,5 +1,8 @@
+using Domain.Common.FileStorage;
+using Domain.Features.ProductService;
 using Domain.Features.UserSevice;
 using Infrastructure.DbContext;
+using Infrastructure.Repositories.ProductRepository;
 using Infrastructure.Repositories.UserRepository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +40,11 @@ builder.Services.AddAuthentication(options =>
 });
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+
+builder.Services.AddTransient<IProductService, ProductService>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
+
+builder.Services.AddTransient<IFileStorageService, FileStorageService>();
 
 var app = builder.Build();
 

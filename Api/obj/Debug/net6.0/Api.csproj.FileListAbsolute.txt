@@ -79,3 +79,4 @@ D:\thuctap_ntq\console\prac_clean\Api\obj\Debug\net6.0\Api.genruntimeconfig.cach
 D:\thuctap_ntq\console\prac_clean\Api\obj\Debug\net6.0\ref\Api.dll
 D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\BCrypt.Net-Next.dll
 D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\Api.staticwebassets.runtime.json
