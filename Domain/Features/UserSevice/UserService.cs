@@ -102,7 +102,12 @@ namespace Domain.Features.UserSevice
         public async Task<ApiResult<LoginResponse>> LoginAsync(LoginRequest loginRequest)
         {
             var result = await _userRepository.GetByUserNameAsync(loginRequest.Email);
+            string hashedPass = Domain.Common.HassPass.HashPass.Hash(loginRequest.PassWord);
             if (result == null)
+            {
+                return new ApiErrorResult<LoginResponse>("Sai tai khoan hoac mat khau");
+            }
+            if (result.PassWord != hashedPass)
             {
                 return new ApiErrorResult<LoginResponse>("Sai tai khoan hoac mat khau");
             }
@@ -153,6 +158,7 @@ namespace Domain.Features.UserSevice
             if (check != null) {
                 return new ApiErrorResult<SignUpResponse>("Tai khoan da ton tai");
             }
+            string hashedPass = Domain.Common.HassPass.HashPass.Hash(signUpRequest.PassWord);
             var newUser = new Infrastructure.Entities.User()
             {
                 Email = signUpRequest.Email,
@@ -160,7 +166,7 @@ namespace Domain.Features.UserSevice
                 LastName = signUpRequest.LastName,
                 CreateAt = DateTime.Now,
                 Role = "USER",
-                PassWord = signUpRequest.PassWord,
+                PassWord = hashedPass,
                 Status = 1
 
             };
