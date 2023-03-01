@@ -45,7 +45,7 @@ namespace Domain.Features.UserSevice
             }
         }
 
-        public async Task<ApiResult<PagedResult<UserDTO>>> GetAll(int? pageSize, int? pageIndex, string search)
+        public async Task<ApiResult<PagedResult<UserDTO>>> GetAll(int? pageSize, int? pageIndex, string? search)
         {
             try
             {
@@ -71,9 +71,9 @@ namespace Domain.Features.UserSevice
                     .Select(x => new UserDTO()
                     {
                         Email = x.Email,
-                        CreateAt = x.CreateAt.Value,
-                        UpdateAt = x.UpdateAt.Value,
-                        DeleteAt = x.DeleteAt.Value,
+                        CreateAt = x.CreateAt,
+                        UpdateAt = x.UpdateAt,
+                        DeleteAt = x.DeleteAt,
                         Firstname = x.Firstname,
                         Id = x.Id,
                         LastName = x.LastName,
@@ -116,7 +116,7 @@ namespace Domain.Features.UserSevice
                 new Claim("Email", result.Email),
                 new Claim("Status", result.Status.ToString()),
                 new Claim("Role", result.Role.ToString()),
-                new Claim(JwtRegisteredClaimNames.Exp, "20"),
+                new Claim("ExpriseIn", "20"),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
             var authenKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));

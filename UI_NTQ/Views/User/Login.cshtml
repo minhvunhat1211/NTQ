@@ -1,0 +1,32 @@
+﻿@model UI_NTQ.Models.LoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="stylesheet" href="~/css/login.css">
+</head>
+<body style="background-color: #67bf4b">
+    @*@section styles{
+    <link rel="stylesheet" href="~/css/login.css">
+}*@
+    
+<div class="login-page">
+    <div class="form">
+        <form asp-action="Login" asp-controller="User">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="text" placeholder="Username" id="username" asp-for="Email" />
+            <input type="password" placeholder="Password" id="password" asp-for="PassWord" />
+                <input type="submit" name="name" value="Login" style="background-color: #00b241; color: white" id="login" />
+            <p class="message">Not registered? <a href="@Url.Action("Register","Register")">Create an account</a></p>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

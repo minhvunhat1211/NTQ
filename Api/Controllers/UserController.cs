@@ -27,7 +27,9 @@ namespace Api.Controllers
                     return BadRequest();
                 }
                 var result = await _userService.LoginAsync(request);
-                return Ok(result);
+                if (result.IsSuccessed)
+                    return Ok(result);
+                return BadRequest();
             }
             catch (Exception ex)
             {
@@ -45,7 +47,9 @@ namespace Api.Controllers
                     return BadRequest();
                 }
                 var result = await _userService.SignUpAsync(request);
-                return Ok(result);
+                if (result.IsSuccessed)
+                    return Ok(result);
+                return BadRequest();
             }
             catch (Exception ex)
             {
@@ -59,7 +63,9 @@ namespace Api.Controllers
             try
             {
                 var result = await _userService.GetAll(pageSize,  pageIndex,  search);
-                return Ok(result);
+                if (result.IsSuccessed)
+                    return Ok(result);
+                return BadRequest();
             }
             catch (Exception ex)
             {
@@ -77,7 +83,9 @@ namespace Api.Controllers
                     return BadRequest();
                 }
                 var result = await _userService.EditAsync(id, resquest);
-                return Ok(result);
+                if (result.IsSuccessed)
+                    return Ok(result);
+                return BadRequest();
             }
             catch (Exception ex)
             {
@@ -96,7 +104,9 @@ namespace Api.Controllers
                     return BadRequest();
                 }
                 var result = await _userService.DeleteAsync(id);
-                return Ok(result);
+                if (result.IsSuccessed)
+                    return Ok(result);
+                return BadRequest();
             }
             catch (Exception)
             {
@@ -114,7 +124,9 @@ namespace Api.Controllers
                     return BadRequest();
                 }
                 var result = await _userService.UnDeleteAsync(id);
-                return Ok(result);
+                if (result.IsSuccessed)
+                    return Ok(result);
+                return BadRequest();
             }
             catch (Exception)
             {
@@ -128,7 +140,9 @@ namespace Api.Controllers
             try
             {
                 var result = await _userService.GetByIdAsync(id);
-                return Ok(result);
+                if(result.IsSuccessed)
+                    return Ok(result);
+                return BadRequest();
             }
             catch (Exception)
             {

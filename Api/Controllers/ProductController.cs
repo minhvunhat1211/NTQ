@@ -89,7 +89,6 @@ namespace Api.Controllers
 
                 return BadRequest($"Could not un delete {id}");
             }
-            throw new NotImplementedException();
         }
     }
 }
