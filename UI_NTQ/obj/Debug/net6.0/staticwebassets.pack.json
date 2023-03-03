@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
+      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\my_profile.css",
+      "PackagePath": "staticwebassets\\css\\my_profile.css"
+    },
+    {
       "Id": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

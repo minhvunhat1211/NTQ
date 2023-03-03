@@ -39,6 +39,7 @@ namespace UI_NTQ.Controllers
                         string token = loginsucess.ResultObj.AccessToken.ToString();
                         var handler = new JwtSecurityTokenHandler();
                         var jwtSecurityToken = handler.ReadJwtToken(token);
+                        var Id = jwtSecurityToken.Claims.First(claim => claim.Type == "Id").Value;
                         var Email = jwtSecurityToken.Claims.First(claim => claim.Type == "Email").Value;
                         var Status = jwtSecurityToken.Claims.First(claim => claim.Type == "Status").Value;
                         var Role = jwtSecurityToken.Claims.First(claim => claim.Type == "Role").Value;
@@ -46,18 +47,14 @@ namespace UI_NTQ.Controllers
                         CookieOptions cookieOptions = new CookieOptions();
                         cookieOptions.Expires = new DateTimeOffset(DateTime.Now.AddMinutes(Convert.ToInt32(ExpriseIn)));
                         HttpContext.Response.Cookies.Append("token_user", token, cookieOptions);
-                        if (Role == "ADMIN")
-                        {
-                            return RedirectToAction("Index","Home");
-                        }
-                        return RedirectToAction("", "");
+                        return RedirectToAction("MyProfile","HomePage");
                     }
                     else
                     {
                         var Response = Res.Content.ReadAsStringAsync().Result;
-                        var loginFail = new FailResponseModel();
-                        loginFail = JsonConvert.DeserializeObject<FailResponseModel>(Response);
-                        string errorMessage = loginFail.Error.ToString();
+                        
+                        var loginFail = JsonConvert.DeserializeObject<ApiErrorResult<FailResponseModel>>(Response);
+                        string errorMessage = loginFail.Message.ToString();
                         ModelState.AddModelError("", errorMessage);
                         return View();
                     }
@@ -68,6 +65,37 @@ namespace UI_NTQ.Controllers
         [HttpGet]
         public IActionResult Register()
         {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterRequestModel request)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+                    client.DefaultRequestHeaders.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    var json = JsonConvert.SerializeObject(request);
+                    var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+                    HttpResponseMessage Res = await client.PostAsync("User/signup", httpContent);
+                    if (Res.IsSuccessStatusCode)
+                    {
+                        
+                        ModelState.AddModelError("", "Dang ki thanh cong");
+                        return View();
+                    }
+                    else
+                    {
+                        var Response = Res.Content.ReadAsStringAsync().Result;
+                        var registerFail = JsonConvert.DeserializeObject<ApiErrorResult<FailResponseModel>>(Response);
+                        string errorMessage = registerFail.Message.ToString();
+                        ModelState.AddModelError("", errorMessage);
+                        return View();
+                    }
+                }
+            }
             return View();
         }
     }

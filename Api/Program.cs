@@ -40,6 +40,7 @@ builder.Services.AddAuthentication(options =>
     };
 
 });
+builder.Services.AddAuthorization();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 

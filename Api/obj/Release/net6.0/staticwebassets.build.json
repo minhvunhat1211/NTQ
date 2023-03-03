@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "fmW6qRD40gWbsd0aweE5SngGIAFJYhtb/WBEKPgoUkc=",
+  "Source": "Api",
+  "BasePath": "_content/Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Api\\wwwroot",
+      "Source": "Api",
+      "ContentRoot": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\product_content\\cc717060-58ff-400f-bb54-fa89f78c14cf.png",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "product_content/cc717060-58ff-400f-bb54-fa89f78c14cf.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\product_content\\cc717060-58ff-400f-bb54-fa89f78c14cf.png"
+    },
+    {
+      "Identity": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\product_content\\f563f960-efcf-48a5-8cc0-cf08ab80988e.png",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "product_content/f563f960-efcf-48a5-8cc0-cf08ab80988e.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\product_content\\f563f960-efcf-48a5-8cc0-cf08ab80988e.png"
+    }
+  ]
+}

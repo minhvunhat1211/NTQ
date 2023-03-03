@@ -1,6 +1,7 @@
 ﻿
 using Domain.Features.UserSevice;
 using Domain.Models.DTO.UserDTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -9,6 +10,7 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -17,6 +19,7 @@ namespace Api.Controllers
             _userService = userService ;
 
         }
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login( LoginRequest request)
         {
@@ -29,7 +32,7 @@ namespace Api.Controllers
                 var result = await _userService.LoginAsync(request);
                 if (result.IsSuccessed)
                     return Ok(result);
-                return BadRequest();
+                return BadRequest(result);
             }
             catch (Exception ex)
             {
@@ -49,7 +52,7 @@ namespace Api.Controllers
                 var result = await _userService.SignUpAsync(request);
                 if (result.IsSuccessed)
                     return Ok(result);
-                return BadRequest();
+                return BadRequest(result);
             }
             catch (Exception ex)
             {
@@ -65,7 +68,7 @@ namespace Api.Controllers
                 var result = await _userService.GetAll(pageSize,  pageIndex,  search);
                 if (result.IsSuccessed)
                     return Ok(result);
-                return BadRequest();
+                return BadRequest(result);
             }
             catch (Exception ex)
             {
@@ -85,7 +88,7 @@ namespace Api.Controllers
                 var result = await _userService.EditAsync(id, resquest);
                 if (result.IsSuccessed)
                     return Ok(result);
-                return BadRequest();
+                return BadRequest(result);
             }
             catch (Exception ex)
             {
@@ -106,7 +109,7 @@ namespace Api.Controllers
                 var result = await _userService.DeleteAsync(id);
                 if (result.IsSuccessed)
                     return Ok(result);
-                return BadRequest();
+                return BadRequest(result);
             }
             catch (Exception)
             {
@@ -126,7 +129,7 @@ namespace Api.Controllers
                 var result = await _userService.UnDeleteAsync(id);
                 if (result.IsSuccessed)
                     return Ok(result);
-                return BadRequest();
+                return BadRequest(result);
             }
             catch (Exception)
             {
@@ -142,7 +145,7 @@ namespace Api.Controllers
                 var result = await _userService.GetByIdAsync(id);
                 if(result.IsSuccessed)
                     return Ok(result);
-                return BadRequest();
+                return BadRequest(result);
             }
             catch (Exception)
             {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "C7Kj+f3uj2O0p/AmEWuzLqdLLAb1T1q1z6UZVlkdmzk=",
+  "Hash": "9dBNist+TMRHXorUV3XNuqj6J21hC/s2Ds8ZkIQT+U4=",
   "Source": "UI_NTQ",
   "BasePath": "_content/UI_NTQ",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\login.css"
+    },
+    {
+      "Identity": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\my_profile.css",
+      "SourceId": "UI_NTQ",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\",
+      "BasePath": "_content/UI_NTQ",
+      "RelativePath": "css/my_profile.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\my_profile.css"
     },
     {
       "Identity": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\site.css",

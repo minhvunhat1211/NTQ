@@ -2,6 +2,7 @@
 using Domain.Models.DTO.UserDTO;
 using Infrastructure.Entities;
 using Infrastructure.Repositories.UserRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -24,7 +25,7 @@ namespace Domain.Features.UserSevice
             _userRepository = userRepository;
             _configuration = configuration;
         }
-
+        
         public async Task<ApiResult<bool>> EditAsync(int id, UserEditResquest editRequest)
         {
             try
@@ -44,7 +45,6 @@ namespace Domain.Features.UserSevice
                 throw;
             }
         }
-
         public async Task<ApiResult<PagedResult<UserDTO>>> GetAll(int? pageSize, int? pageIndex, string? search)
         {
             try
@@ -98,7 +98,6 @@ namespace Domain.Features.UserSevice
                 throw;
             }
         }
-
         public async Task<ApiResult<LoginResponse>> LoginAsync(LoginRequest loginRequest)
         {
             var result = await _userRepository.GetByUserNameAsync(loginRequest.Email);
@@ -113,6 +112,7 @@ namespace Domain.Features.UserSevice
             }
             var authClaim = new List<Claim>
             {
+                new Claim("Id", result.Id.ToString()),
                 new Claim("Email", result.Email),
                 new Claim("Status", result.Status.ToString()),
                 new Claim("Role", result.Role.ToString()),
@@ -134,7 +134,6 @@ namespace Domain.Features.UserSevice
             };
             return new ApiSuccessResult<LoginResponse>(TokenResult);
         }
-
         public async Task<ApiResult<bool>> DeleteAsync(int id)
         {
             try
@@ -183,7 +182,6 @@ namespace Domain.Features.UserSevice
             await _userRepository.CreateAsync(newUser);
             return new ApiSuccessResult<SignUpResponse>(data);
         }
-
         public async Task<ApiResult<bool>> UnDeleteAsync(int id)
         {
             try
@@ -200,7 +198,6 @@ namespace Domain.Features.UserSevice
             }
             
         }
-
         public async Task<ApiResult<UserDTO>> GetByIdAsync(int id)
         {
             try

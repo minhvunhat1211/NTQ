@@ -12,10 +12,10 @@ namespace Domain.Models.DTO.UserDTO
         public string? LastName { get; set; }
         public string? Email { get; set; }
         public string? PassWord { get; set; }
-        public int Status { get; set; }
-        public DateTime CreateAt { get; set; }
-        public DateTime UpdateAt { get; set; }
-        public DateTime DeleteAt { get; set; }
-        public string Role { get; set; }
+        public int? Status { get; set; }
+        public DateTime? CreateAt { get; set; }
+        public DateTime? UpdateAt { get; set; }
+        public DateTime? DeleteAt { get; set; }
+        public string? Role { get; set; }
     }
 }
