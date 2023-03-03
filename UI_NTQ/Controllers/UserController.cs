@@ -44,6 +44,7 @@ namespace UI_NTQ.Controllers
                         var Status = jwtSecurityToken.Claims.First(claim => claim.Type == "Status").Value;
                         var Role = jwtSecurityToken.Claims.First(claim => claim.Type == "Role").Value;
                         var ExpriseIn = jwtSecurityToken.Claims.First(claim => claim.Type == "ExpriseIn").Value;
+                        HttpContext.Session.SetString("Role", Role);
                         CookieOptions cookieOptions = new CookieOptions();
                         cookieOptions.Expires = new DateTimeOffset(DateTime.Now.AddMinutes(Convert.ToInt32(ExpriseIn)));
                         HttpContext.Response.Cookies.Append("token_user", token, cookieOptions);

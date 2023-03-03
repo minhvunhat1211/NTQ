@@ -31,10 +31,8 @@ namespace Domain.Features.UserSevice
             try
             {
                 var findUserById = await _userRepository.GetById(id);
-                findUserById.Email = editRequest.Email;
                 findUserById.LastName = editRequest.LastName;
-                findUserById.Firstname = editRequest.Firstname;
-                findUserById.Role= editRequest.Role;    
+                findUserById.Firstname = editRequest.Firstname;    
                 findUserById.UpdateAt = DateTime.Now;
                 await _userRepository.UpdateAsync(findUserById);
                 return new ApiSuccessResult<bool>();

@@ -3,11 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http.Headers;
+using System.Text;
 using UI_NTQ.Models;
 
 namespace UI_NTQ.Controllers
 {
-    public class HomePageController : Controller
+    public class HomePageController : BaseController
     {
         private readonly IConfiguration _configuration;
         public HomePageController(IConfiguration configuration)
@@ -44,7 +45,7 @@ namespace UI_NTQ.Controllers
                 {
                     Id = data.ResultObj.Id,
                     Firstname = data.ResultObj.Firstname,
-                    LastName = data.ResultObj.LastName,
+                    Lastname = data.ResultObj.Lastname,
                     Email = data.ResultObj.Email,
                     PassWord = data.ResultObj.PassWord,
                     Status = data.ResultObj.Status,
@@ -61,6 +62,37 @@ namespace UI_NTQ.Controllers
                 throw;
             }
             
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(UserEditRequest request)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var client = new HttpClient())
+                {
+                    string token = HttpContext.Request.Cookies["token_user"].ToString();
+                    client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+                    client.DefaultRequestHeaders.Clear();
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    var json = JsonConvert.SerializeObject(request);
+                    var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+                    HttpResponseMessage Res = await client.PutAsync("User/edit?id=" + request.Id.ToString(), httpContent);
+                    if (Res.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("MyProfile", "HomePage");
+                    }
+                    else
+                    {
+                        var Response = Res.Content.ReadAsStringAsync().Result;
+                        var fail = JsonConvert.DeserializeObject<ApiErrorResult<FailResponseModel>>(Response);
+                        string errorMessage = fail.Message.ToString();
+                        ModelState.AddModelError("", errorMessage);
+                        return RedirectToAction("MyProfile", "HomePage");
+                    }
+                }
+            }
+            return RedirectToAction("MyProfile", "HomePage");
         }
     }
 }
