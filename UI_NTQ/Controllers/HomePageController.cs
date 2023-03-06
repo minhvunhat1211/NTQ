@@ -1,9 +1,10 @@
-﻿using Domain.Common;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http.Headers;
 using System.Text;
+using UI_NTQ.Common;
 using UI_NTQ.Models;
 
 namespace UI_NTQ.Controllers

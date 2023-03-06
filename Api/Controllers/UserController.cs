@@ -117,7 +117,7 @@ namespace Api.Controllers
                 return BadRequest($"Could not delete {id}");
             }
         }
-        [HttpPut("undelete")]
+        [HttpDelete("undelete")]
         public async Task<IActionResult> UnDelete(int id)
         {
             try

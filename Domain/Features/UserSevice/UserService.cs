@@ -64,8 +64,7 @@ namespace Domain.Features.UserSevice
                     totalRow = await _userRepository.CountAsync(expression);
                 }
                 //Paging
-                var data = query.Skip((pageIndex.Value - 1) * pageSize.Value)
-                    .Take(pageSize.Value)
+                var data = query
                     .Select(x => new UserDTO()
                     {
                         Email = x.Email,
@@ -76,7 +75,8 @@ namespace Domain.Features.UserSevice
                         Id = x.Id,
                         LastName = x.LastName,
                         Status = x.Status,
-                    }).ToList();
+                        Role= x.Role,
+                    }).OrderByDescending(x => x.CreateAt).ToList();
                 var pagedResult = new PagedResult<UserDTO>()
                 {
                     TotalRecord = totalRow,

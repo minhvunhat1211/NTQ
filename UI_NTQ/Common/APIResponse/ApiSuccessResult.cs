@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Domain.Common
+namespace UI_NTQ.Common
 {
     public class ApiSuccessResult<T> : ApiResult<T>
     {

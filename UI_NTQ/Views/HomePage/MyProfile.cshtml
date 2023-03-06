@@ -89,7 +89,7 @@
                                     <h6 class="mb-0">CreateAt</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    @Model.CreateAt
+                                    @Model.CreateAt.Value.ToString("dd/MM/yyyy")
                                 </div>
                             </div>
                             <hr>
@@ -98,7 +98,14 @@
                                     <h6 class="mb-0">UpdateAt</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    @Model.UpdateAt
+                                    @{
+                                        string creatAt = "N/A";
+                                        if (Model.UpdateAt != null)
+                                        {
+                                            creatAt = Model.UpdateAt.Value.ToString("dd/MM/yyyy");
+                                        }
+                                    }
+                                    @creatAt
                                 </div>
                             </div>
                             <hr>
@@ -107,7 +114,14 @@
                                     <h6 class="mb-0">DeleteAt</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    @Model.DeleteAt
+                                    @{
+                                        string deleteAt = "N/A";
+                                        if (Model.DeleteAt != null)
+                                        {
+                                            deleteAt = Model.DeleteAt.Value.ToString("dd/MM/yyyy");
+                                        }
+                                    }
+                                    @deleteAt
                                 </div>
                             </div>
                             <hr>
