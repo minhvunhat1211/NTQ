@@ -1,4 +1,4 @@
-﻿namespace UI_NTQ.Models
+﻿namespace UI_NTQ.Models.UserModel
 {
     public class EditUserModel
     {

@@ -108,6 +108,7 @@ namespace Domain.Features.ProductService
                         CreateAt = product.CreateAt,
                         DeleteAt = product.DeleteAt,
                         UpdateAt = product.UpdateAt,
+                        Status= product.Status,
                     }).ToList();
                 var pagedResult = new PagedResult<ProductDTO>()
                 {
@@ -160,6 +161,34 @@ namespace Domain.Features.ProductService
                 throw;
             }
             throw new NotImplementedException();
+        }
+
+        public async Task<ApiResult<ProductDTO>> GetByIdAsync(int id)
+        {
+            try
+            {
+                var findById = await _productRepository.GetByIdProduct(id);
+                var product = new ProductDTO()
+                {
+                    Id = findById.Id,
+                    Name = findById.Name,
+                    Slug = findById.Slug,
+                    ProductDetail = findById.ProductDetail,
+                    CreateAt = findById.CreateAt,
+                    UpdateAt = findById.UpdateAt,
+                    DeleteAt = findById.DeleteAt,
+                    Price = findById.Price,
+                    Trending = findById.Trending,
+                    Status = findById.Status,
+                    ProductImgs= findById.ProductImgs,
+                };
+                return new ApiSuccessResult<ProductDTO>(product);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

@@ -1,12 +1,12 @@
 {
   "Files": [
     {
-      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\product_content\\cc717060-58ff-400f-bb54-fa89f78c14cf.png",
-      "PackagePath": "staticwebassets\\product_content\\cc717060-58ff-400f-bb54-fa89f78c14cf.png"
+      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\product_content\\7ed76703-1695-46b3-9238-fb8ac2334e66.jpg",
+      "PackagePath": "staticwebassets\\product_content\\7ed76703-1695-46b3-9238-fb8ac2334e66.jpg"
     },
     {
-      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\product_content\\f563f960-efcf-48a5-8cc0-cf08ab80988e.png",
-      "PackagePath": "staticwebassets\\product_content\\f563f960-efcf-48a5-8cc0-cf08ab80988e.png"
+      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\product_content\\b5e68d45-04c5-48aa-87c4-25782a125699.png",
+      "PackagePath": "staticwebassets\\product_content\\b5e68d45-04c5-48aa-87c4-25782a125699.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Api.Microsoft.AspNetCore.StaticWebAssets.props",

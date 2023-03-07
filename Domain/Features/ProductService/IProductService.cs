@@ -1,5 +1,6 @@
 ﻿using Domain.Common;
 using Domain.Models.DTO.ProductDTO;
+using Domain.Models.DTO.UserDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Domain.Features.ProductService
     {
         public Task<ApiResult<bool>> CreateAsync(ProductCreateRequest request);
         public Task<ApiResult<PagedResult<ProductDTO>>> GetAllAsync(int? pageSize, int? pageIndex, string? search);
+        public Task<ApiResult<ProductDTO>> GetByIdAsync(int id);
         public Task<ApiResult<bool>> DeleteAsync(int id);
         public Task<ApiResult<bool>> UnDeleteAsync(int id);
     }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace UI_NTQ.Models
+namespace UI_NTQ.Models.UserModel
 {
     public class UserEditRequest
     {

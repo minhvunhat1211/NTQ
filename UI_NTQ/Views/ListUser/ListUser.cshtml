@@ -1,4 +1,4 @@
-﻿@model UI_NTQ.Common.PagedResult<UserResponse>
+﻿@model UI_NTQ.Common.PagedResult<UI_NTQ.Models.UserModel.UserResponse>
 @{
     ViewData["Title"] = "ListUser";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -57,14 +57,19 @@
                                     <td>@item.StatusName</td>
                                     <td class="action" style="display: flex">
                                         @*<a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>*@
-                                        <div>
+                                        @if (item.Status == 1)
+                                        {
+                                            <div>
 
-                                            <a href="/ListUser/Delete?userId=@item.Id" class="delete" title="Delete" onclick="return confirm('Do you Want to delete?')"><i class="fa-solid fa-trash-can"></i></a>
-                                        </div>
-                                        <div>
-                                            <a href="/ListUser/UnDelete?userId=@item.Id" class="un-delete" onclick="return confirm('Do you Want to delete?')">Un delete</a>
-                                        </div>
-
+                                                <a href="/ListUser/Delete?userId=@item.Id" class="delete" title="Delete" onclick="return confirm('Do you Want to delete?')"><i class="fa-solid fa-trash-can"></i></a>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div>
+                                                <a href="/ListUser/UnDelete?userId=@item.Id" class="un-delete" onclick="return confirm('Do you Want to delete?')">Un delete</a>
+                                            </div>
+                                        }
                                     </td>
 
                                 </tr>
@@ -95,4 +100,4 @@
 </div>
 @section Scripts{
 
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

@@ -26,5 +26,10 @@ namespace Infrastructure.Repositories.ProductRepository
             .Take(pageSize.Value);
             return query.ToList();
         }
+        public async Task<Product> GetByIdProduct(int? productId)
+        {
+            var query = _NTQDbContext.Products.Include(x => x.ProductImgs).Where(x => x.Id == productId).FirstOrDefault();
+            return query;
+        }
     }
 }

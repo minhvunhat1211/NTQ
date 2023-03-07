@@ -1,6 +1,7 @@
 ﻿using Domain.Features.ProductService;
 using Domain.Features.UserSevice;
 using Domain.Models.DTO.ProductDTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
@@ -50,6 +52,23 @@ namespace Api.Controllers
             }
            
         }
+        [HttpGet("getbyid")]
+        public async Task<IActionResult> GetById(int productId)
+        {
+            try
+            {
+                var result = await _productService.GetByIdAsync(productId);
+                if (result.IsSuccessed)
+                    return Ok(result);
+                return BadRequest();
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+
+        }
         [HttpDelete("delete")]
         public async Task<IActionResult> Delete(int id)
         {
@@ -70,7 +89,7 @@ namespace Api.Controllers
                 return BadRequest($"Could not delete {id}");
             }
         }
-        [HttpPut("undelete")]
+        [HttpDelete("undelete")]
         public async Task<IActionResult> UnDelete(int id)
         {
             try

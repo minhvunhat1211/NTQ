@@ -1,6 +1,6 @@
 ﻿using System.Drawing.Printing;
 
-namespace UI_NTQ.Models
+namespace UI_NTQ.Models.UserModel
 {
     public class UserResponse
     {
@@ -32,7 +32,7 @@ namespace UI_NTQ.Models
                 return Firstname + " " + Lastname;
             }
         }
-        
+
     }
 
 }

@@ -221,7 +221,6 @@ namespace Domain.Features.UserSevice
 
                 throw;
             }
-            throw new NotImplementedException();
         }
     }
 }

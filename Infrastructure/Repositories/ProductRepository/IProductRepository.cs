@@ -11,5 +11,6 @@ namespace Infrastructure.Repositories.ProductRepository
     public interface IProductRepository : IRepositoryBase<Product>
     {
         Task<IEnumerable<Product>> GetAllProduct(int? pageSize, int? pageIndex);
+        Task<Product> GetByIdProduct(int? productId);
     }
 }

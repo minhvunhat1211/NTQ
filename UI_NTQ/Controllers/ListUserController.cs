@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Net.Http.Headers;
 using System.Text;
 using UI_NTQ.Common;
-using UI_NTQ.Models;
+using UI_NTQ.Models.UserModel;
 
 namespace UI_NTQ.Controllers
 {
@@ -119,7 +119,6 @@ namespace UI_NTQ.Controllers
                     {
                         return RedirectToAction("ListUser");
                     }
-
                 }
             }
             return RedirectToAction("ListUser");
