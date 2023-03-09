@@ -7,7 +7,7 @@
         public string? Slug { get; set; }
         public string? ProductDetail { get; set; }
         public decimal? Price { get; set; }
-        public bool? Trending { get; set; }
+        public bool Trending { get; set; }
         public List<T>? ProductImgs { get; set; }
         public string StatusName
         {

@@ -109,5 +109,24 @@ namespace Api.Controllers
                 return BadRequest($"Could not un delete {id}");
             }
         }
+        [HttpPut("edit")]
+        public async Task<IActionResult> Edit(int productId, [FromForm] PoductEditRequest request)
+        {
+            try
+            {
+                var result = await _productService.EditAsync(productId, request);
+                if (result.IsSuccessed)
+                {
+                    return Ok(result);
+                }
+                return BadRequest();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            throw new NotImplementedException();
+        }
     }
 }

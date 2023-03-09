@@ -172,5 +172,61 @@ namespace UI_NTQ.Controllers
             }
             return View();
         }
+        [HttpPost]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> EditProduct(int productId,PoductEditRequest request)
+        {
+            try
+            {
+                string token = HttpContext.Request.Cookies["token_user"].ToString();
+                if (string.IsNullOrEmpty(token)) { return RedirectToAction("Login", "User"); };
+                if (ModelState.IsValid)
+                {
+                    using (var client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                        /* var json = JsonConvert.SerializeObject(request);
+                         var httpContent = new StringContent(json, Encoding.UTF8, "application/json");*/
+                        var requestContent = new MultipartFormDataContent();
+
+                        if (request.ProductImgs != null)
+                        {
+                            foreach (var file in request.ProductImgs)
+                            {
+                                var fileStream = file.OpenReadStream();
+                                requestContent.Add(new StreamContent(fileStream), "ProductImgs", file.FileName.ToString());
+                            }
+
+                        }
+                        requestContent.Add(new StringContent(request.Name.ToString()), "name");
+                        requestContent.Add(new StringContent(request.Price.ToString()), "price");
+                        requestContent.Add(new StringContent(request.ProductDetail.ToString()), "productDetail");
+                        requestContent.Add(new StringContent(request.Slug.ToString()), "slug");
+                        requestContent.Add(new StringContent(request.Trending.ToString()), "trending");
+                        HttpResponseMessage Res = await client.PutAsync("Product/edit?productId=" + request.Id, requestContent);
+                        if (Res.IsSuccessStatusCode)
+                        {
+                            return RedirectToAction("ProductDetail", new {productId = request.Id});
+                        }
+                        else
+                        {
+                            var Response = Res.Content.ReadAsStringAsync().Result;
+                            var addFail = JsonConvert.DeserializeObject<ApiErrorResult<FailResponseModel>>(Response);
+                            string errorMessage = addFail.Message.ToString();
+                            ModelState.AddModelError("", errorMessage);
+                            return View();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return View();
+        }
     }
 }

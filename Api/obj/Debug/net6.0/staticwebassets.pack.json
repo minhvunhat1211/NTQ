@@ -1,12 +1,28 @@
 {
   "Files": [
     {
+      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\product_content\\4ba914b7-c7e7-4ea6-ae60-3df1d13793fd.png",
+      "PackagePath": "staticwebassets\\product_content\\4ba914b7-c7e7-4ea6-ae60-3df1d13793fd.png"
+    },
+    {
       "Id": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\product_content\\7ed76703-1695-46b3-9238-fb8ac2334e66.jpg",
       "PackagePath": "staticwebassets\\product_content\\7ed76703-1695-46b3-9238-fb8ac2334e66.jpg"
     },
     {
+      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\product_content\\970d406e-917c-4971-a31e-e0347fa5473f.jpeg",
+      "PackagePath": "staticwebassets\\product_content\\970d406e-917c-4971-a31e-e0347fa5473f.jpeg"
+    },
+    {
       "Id": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\product_content\\b5e68d45-04c5-48aa-87c4-25782a125699.png",
       "PackagePath": "staticwebassets\\product_content\\b5e68d45-04c5-48aa-87c4-25782a125699.png"
+    },
+    {
+      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\product_content\\db1c88c9-c10e-4564-9bdf-3e60f85f4ed2.png",
+      "PackagePath": "staticwebassets\\product_content\\db1c88c9-c10e-4564-9bdf-3e60f85f4ed2.png"
+    },
+    {
+      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\Api\\wwwroot\\product_content\\ea8e17f0-48cd-41e1-8453-acc149b1b155.jpg",
+      "PackagePath": "staticwebassets\\product_content\\ea8e17f0-48cd-41e1-8453-acc149b1b155.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Api.Microsoft.AspNetCore.StaticWebAssets.props",

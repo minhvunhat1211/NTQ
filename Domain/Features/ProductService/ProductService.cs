@@ -135,6 +135,7 @@ namespace Domain.Features.ProductService
             {
                 var findProductById = await _productRepository.GetById(id);
                 findProductById.Status = 2;
+                findProductById.DeleteAt= DateTime.Now;
                 await _productRepository.UpdateAsync(findProductById);
                 return new ApiSuccessResult<bool>(true);
             }
@@ -183,6 +184,41 @@ namespace Domain.Features.ProductService
                     ProductImgs= findById.ProductImgs,
                 };
                 return new ApiSuccessResult<ProductDTO>(product);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<ApiResult<bool>> EditAsync(int productId, PoductEditRequest request)
+        {
+            try
+            {
+                var findProductById = await _productRepository.GetByIdProduct(productId);
+                findProductById.Trending = request.Trending;
+                findProductById.Slug = request.Slug;
+                findProductById.ProductDetail = request.ProductDetail;
+                findProductById.UpdateAt = DateTime.Now;
+                var tempImg =  findProductById.ProductImgs;
+                if (request.ProductImgs != null)
+                {
+                    foreach (var img in request.ProductImgs)
+                    {
+                        var productImage = new ProductImg()
+                        {
+                            Caption = img.Name,
+                            FileSize = img.Length,
+                            ImagePath = await this.SaveFile(img),
+                            IsDefault = true,
+                        };
+                        tempImg.Add(productImage);
+                    }
+                    findProductById.ProductImgs = tempImg;
+                }
+                await _productRepository.UpdateAsync(findProductById);
+                return new ApiSuccessResult<bool>();
             }
             catch (Exception)
             {
