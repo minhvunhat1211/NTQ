@@ -16,6 +16,20 @@
                         </div>
                         <div class="col-sm-7">
                             <a href="/Product/AddProduct" class="btn btn-secondary"><i class="fa-solid fa-plus"></i> <span>Add New Product</span></a>
+
+                            @using (Html.BeginForm("ListProduct", "Product", FormMethod.Get))
+                            {
+                                <p>
+                                    Filter:
+                                    <select name="optionFilter" id="cars">
+                                        <option value="Trend">Is trending</option>
+                                        <option value="Not trend">Not trend</option>
+                                        <option value="Delete">Delete</option>
+                                        <option value="Default">All</option>
+                                    </select>
+                                    <input type="submit" value="Tìm kiếm" />
+                                </p>
+                            }
                         </div>
                     </div>
                 </div>
@@ -34,6 +48,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @{
+                            if (Model.Items.Count() == 0)
+                            {
+                                <tr>
+                                    <td>
+                                        NO DATA FOUND
+                                    </td>
+                                </tr>
+                            }
+                        }
                         @{
                             foreach (var item in Model.Items)
                             {

@@ -20,7 +20,7 @@ namespace Infrastructure.Repositories.ProductRepository
 
         public async Task<IEnumerable<Product>> GetAllProduct(int? pageSize, int? pageIndex)
         {
-            var query =  _NTQDbContext.Products.Include(x => x.ProductImgs).AsQueryable();
+            var query =  _NTQDbContext.Products.Include(img => img.ProductImgs).AsQueryable();
             var pageCount = query.Count();
             query = query.Skip((pageIndex.Value - 1) * pageSize.Value)
             .Take(pageSize.Value);
@@ -28,7 +28,7 @@ namespace Infrastructure.Repositories.ProductRepository
         }
         public async Task<Product> GetByIdProduct(int? productId)
         {
-            var query = _NTQDbContext.Products.Include(x => x.ProductImgs).Where(x => x.Id == productId).FirstOrDefault();
+            var query = _NTQDbContext.Products.Include(x => x.ProductImgs).Where(id => id.Id == productId).FirstOrDefault();
             return query;
         }
     }

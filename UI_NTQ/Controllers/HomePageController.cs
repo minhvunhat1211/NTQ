@@ -96,5 +96,6 @@ namespace UI_NTQ.Controllers
             }
             return RedirectToAction("MyProfile", "HomePage");
         }
+        
     }
 }

@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\UI_NTQ.bundle.scp.css"
     },
     {
+      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\list_user.css",
+      "PackagePath": "staticwebassets\\css\\list_user.css"
+    },
+    {
       "Id": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
       "Id": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\my_profile.css",
       "PackagePath": "staticwebassets\\css\\my_profile.css"
+    },
+    {
+      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\product_detail.css",
+      "PackagePath": "staticwebassets\\css\\product_detail.css"
     },
     {
       "Id": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\site.css",
@@ -203,6 +211,14 @@
     {
       "Id": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\lib\\jquery-confirm\\dist\\jquery-confirm.min.css",
+      "PackagePath": "staticwebassets\\lib\\jquery-confirm\\dist\\jquery-confirm.min.css"
+    },
+    {
+      "Id": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\lib\\jquery-confirm\\dist\\jquery-confirm.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-confirm\\dist\\jquery-confirm.min.js"
     },
     {
       "Id": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",

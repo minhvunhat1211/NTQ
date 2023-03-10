@@ -46,6 +46,16 @@
                     </thead>
                     <tbody>
                         @{
+                            if (Model.Items.Count() == 0)
+                            {
+                                <tr>
+                                    <td>
+                                        NO DATA FOUND
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        @{
                             foreach (var item in Model.Items)
                             {
                                 <tr>

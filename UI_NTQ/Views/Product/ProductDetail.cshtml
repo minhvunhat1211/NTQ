@@ -10,6 +10,9 @@
     <hr />
     <form asp-controller="Product" asp-action="EditProduct" asp-method="post" enctype="multipart/form-data">
         <dl class="row">
+            <div class="col-xl-12">
+                <div asp-validation-summary="All" class="text-danger"></div>
+            </div>
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.Id)
             </dt>
@@ -58,19 +61,40 @@
                 @Html.DisplayNameFor(model => model.CreateAt)
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.CreateAt)
+                @{
+                    string creatAt = "N/A";
+                    if (Model.CreateAt != null)
+                    {
+                        creatAt = Model.CreateAt.Value.ToString("dd/MM/yyyy");
+                    }
+                }
+                @creatAt
             </dd>
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.UpdateAt)
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.UpdateAt)
+                @{
+                    string updateAt = "N/A";
+                    if (Model.UpdateAt != null)
+                    {
+                        updateAt = Model.UpdateAt.Value.ToString("dd/MM/yyyy");
+                    }
+                }
+                @updateAt
             </dd>
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.DeleteAt)
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.DeleteAt)
+                @{
+                    string deleteAt = "N/A";
+                    if (Model.DeleteAt != null)
+                    {
+                        deleteAt = Model.DeleteAt.Value.ToString("dd/MM/yyyy");
+                    }
+                }
+                @deleteAt
             </dd>
 
             @foreach (var item in Model.ProductImgs)
@@ -79,7 +103,7 @@
 
                 </dt>
                 <dd class="col-sm-10">
-                    <img style="height:80px;width:80px" src="https://localhost:7029/product_content/@item.ImagePath">
+                    <img style="height:80px;width:80px" src="http://tuyetvongv3.somee.com/product_content/@item.ImagePath">
                 </dd>
             }
             <dt class="col-sm-2">

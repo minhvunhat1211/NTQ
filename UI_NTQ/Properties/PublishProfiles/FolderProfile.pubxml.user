@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>D:\thuctap_ntq\pl3</_PublishTargetUrl>
-    <History>True|2023-03-03T01:24:24.1670909Z;</History>
+    <_PublishTargetUrl>D:\thuctap_ntq\PLUI</_PublishTargetUrl>
+    <History>True|2023-03-10T11:04:20.4423891Z;True|2023-03-09T14:21:58.0733657+07:00;True|2023-03-09T14:09:19.7159056+07:00;True|2023-03-09T13:48:22.7170776+07:00;True|2023-03-09T13:42:10.7100671+07:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

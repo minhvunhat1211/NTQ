@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http.Headers;
 using System.Text;
@@ -131,6 +132,14 @@ namespace UI_NTQ.Controllers
                 throw;
             }
             return View();
+        }
+
+        public IActionResult Logout()
+        {
+
+            Response.Cookies.Delete("token_user");
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "User");
         }
     }
 }

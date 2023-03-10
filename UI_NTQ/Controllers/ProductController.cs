@@ -6,6 +6,7 @@ using System.Text;
 using UI_NTQ.Common;
 using UI_NTQ.Models;
 using UI_NTQ.Models.ProductModel;
+using UI_NTQ.Models.UserModel;
 
 namespace UI_NTQ.Controllers
 {
@@ -39,8 +40,39 @@ namespace UI_NTQ.Controllers
                 var body = await response.Content.ReadAsStringAsync();
 
                 var data = JsonConvert.DeserializeObject<ApiSuccessResult<PagedResult<ProductResponse<ProductImg>>>>(body);
-
-                return View(data.ResultObj);
+                switch (optionFilter)
+                {
+                    case "Trend":
+                        var productFilterByTrend = new PagedResult<ProductResponse<ProductImg>>()
+                        {
+                            PageSize = data.ResultObj.PageSize,
+                            PageIndex = data.ResultObj.PageIndex,
+                            TotalRecord = data.ResultObj.TotalRecord,
+                            Items = data.ResultObj.Items.Where(x => x.Trending == true).ToList(),
+                        };
+                        return View(productFilterByTrend);
+                    case "Delete":
+                        var userFilterByDelete = new PagedResult<ProductResponse<ProductImg>>()
+                        {
+                            PageSize = data.ResultObj.PageSize,
+                            PageIndex = data.ResultObj.PageIndex,
+                            TotalRecord = data.ResultObj.TotalRecord,
+                            Items = data.ResultObj.Items.Where(x => x.Status == 2).ToList(),
+                        };
+                        return View(userFilterByDelete);
+                    case "Not trend":
+                        var userFilterByNotTrend = new PagedResult<ProductResponse<ProductImg>>()
+                        {
+                            PageSize = data.ResultObj.PageSize,
+                            PageIndex = data.ResultObj.PageIndex,
+                            TotalRecord = data.ResultObj.TotalRecord,
+                            Items = data.ResultObj.Items.Where(x => x.Trending == false).ToList(),
+                        };
+                        return View(userFilterByNotTrend);
+                    default:
+                        return View(data.ResultObj);
+                }
+                /*return View(data.ResultObj);*/
 
             }
             catch (Exception)

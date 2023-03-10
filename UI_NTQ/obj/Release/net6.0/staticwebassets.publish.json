@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ME0zjBWcXer/BS5jy+ScfqrS8I6B0ImiTRioGU5BTwE=",
+  "Hash": "GS+iFZSAC17G4WyFbz6CuTErDIY/JqyGITDY8GdFYz4=",
   "Source": "UI_NTQ",
   "BasePath": "_content/UI_NTQ",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\UI_NTQ.bundle.scp.css"
     },
     {
+      "Identity": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\list_user.css",
+      "SourceId": "UI_NTQ",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\",
+      "BasePath": "_content/UI_NTQ",
+      "RelativePath": "css/list_user.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\list_user.css"
+    },
+    {
       "Identity": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\login.css",
       "SourceId": "UI_NTQ",
       "SourceType": "Discovered",
@@ -83,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\my_profile.css"
+    },
+    {
+      "Identity": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\product_detail.css",
+      "SourceId": "UI_NTQ",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\",
+      "BasePath": "_content/UI_NTQ",
+      "RelativePath": "css/product_detail.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\product_detail.css"
     },
     {
       "Identity": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\css\\site.css",
@@ -967,6 +1001,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\lib\\jquery-confirm\\dist\\jquery-confirm.min.css",
+      "SourceId": "UI_NTQ",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\",
+      "BasePath": "_content/UI_NTQ",
+      "RelativePath": "lib/jquery-confirm/dist/jquery-confirm.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-confirm\\dist\\jquery-confirm.min.css"
+    },
+    {
+      "Identity": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\lib\\jquery-confirm\\dist\\jquery-confirm.min.js",
+      "SourceId": "UI_NTQ",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\",
+      "BasePath": "_content/UI_NTQ",
+      "RelativePath": "lib/jquery-confirm/dist/jquery-confirm.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-confirm\\dist\\jquery-confirm.min.js"
     },
     {
       "Identity": "D:\\thuctap_ntq\\console\\prac_clean\\UI_NTQ\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
