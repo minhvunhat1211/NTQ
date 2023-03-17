@@ -19,11 +19,15 @@
     <div class="login-page">
         <div class="form">
             <form asp-action="Register" asp-controller="User">
-                <div asp-validation-summary="All" class="text-danger"></div>
-                <input type="text" placeholder="Firstname" id="username" asp-for="FirstName" />
-                <input type="text" placeholder="Lastname" id="username" asp-for="LastName" />
-                <input type="text" placeholder="Username" id="username" asp-for="Email" />
-                <input type="password" placeholder="Password" id="password" asp-for="PassWord" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="text" placeholder="Firstname" name="firstname" asp-for="FirstName" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <input type="text" placeholder="Lastname" name="lastname" asp-for="LastName" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+                <input type="text" placeholder="Username" name="email" asp-for="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <input type="password" placeholder="Password" name="password" asp-for="PassWord" />
+                <span asp-validation-for="PassWord" class="text-danger"></span>
                 <input type="submit" name="name" value="Register" style="background-color: #00b241; color: white" id="login" />
                 <p class="message">Has an account? <a href="@Url.Action("Login","User")">login</a></p>
             </form>

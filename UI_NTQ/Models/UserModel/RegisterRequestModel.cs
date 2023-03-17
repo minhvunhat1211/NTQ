@@ -4,7 +4,9 @@ namespace UI_NTQ.Models.UserModel
 {
     public class RegisterRequestModel
     {
+        [Required(ErrorMessage = "FirstName khong duoc de trong")]
         public string FirstName { get; set; }
+        [Required(ErrorMessage = "LastName khong duoc de trong")]
         public string LastName { get; set; }
         [Required(ErrorMessage = "Email khong duoc de trong")]
         [EmailAddress(ErrorMessage = "Sai dinh dang email")]

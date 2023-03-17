@@ -52,9 +52,7 @@ D:\thuctap_ntq\console\prac_clean\Api\obj\Release\net6.0\PubTmp\Out\runtimes\win
 D:\thuctap_ntq\console\prac_clean\Api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\thuctap_ntq\console\prac_clean\Api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.ServiceProcess.ServiceController.dll
 D:\thuctap_ntq\console\prac_clean\Api\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-D:\thuctap_ntq\console\prac_clean\Api\obj\Release\net6.0\PubTmp\Out\Application.dll
 D:\thuctap_ntq\console\prac_clean\Api\obj\Release\net6.0\PubTmp\Out\Domain.dll
 D:\thuctap_ntq\console\prac_clean\Api\obj\Release\net6.0\PubTmp\Out\Infrastructure.dll
 D:\thuctap_ntq\console\prac_clean\Api\obj\Release\net6.0\PubTmp\Out\Domain.pdb
-D:\thuctap_ntq\console\prac_clean\Api\obj\Release\net6.0\PubTmp\Out\Application.pdb
 D:\thuctap_ntq\console\prac_clean\Api\obj\Release\net6.0\PubTmp\Out\Infrastructure.pdb

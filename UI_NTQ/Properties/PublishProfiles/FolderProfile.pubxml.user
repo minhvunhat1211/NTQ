@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>D:\thuctap_ntq\PLUI</_PublishTargetUrl>
-    <History>True|2023-03-10T11:04:20.4423891Z;True|2023-03-09T14:21:58.0733657+07:00;True|2023-03-09T14:09:19.7159056+07:00;True|2023-03-09T13:48:22.7170776+07:00;True|2023-03-09T13:42:10.7100671+07:00;</History>
+    <History>True|2023-03-17T15:15:22.3832775Z;True|2023-03-17T21:18:12.9089185+07:00;True|2023-03-10T18:04:20.4423891+07:00;True|2023-03-09T14:21:58.0733657+07:00;True|2023-03-09T14:09:19.7159056+07:00;True|2023-03-09T13:48:22.7170776+07:00;True|2023-03-09T13:42:10.7100671+07:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
