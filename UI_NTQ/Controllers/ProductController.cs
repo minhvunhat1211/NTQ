@@ -252,13 +252,14 @@ namespace UI_NTQ.Controllers
                         }
                     }
                 }
+                return RedirectToAction("ProductDetail", new { productId = request.Id });
             }
             catch (Exception)
             {
 
                 throw;
             }
-            return View();
+            
         }
     }
 }

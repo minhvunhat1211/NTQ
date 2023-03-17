@@ -1,4 +1,8 @@
-﻿namespace UI_NTQ.Models.ProductModel
+﻿
+
+using System.ComponentModel.DataAnnotations;
+
+namespace UI_NTQ.Models.ProductModel
 {
     public class ProductResponse<T> : BaseModel
     {

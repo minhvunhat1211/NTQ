@@ -53,11 +53,9 @@ D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\runtimes\win\lib\netstand
 D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.ServiceProcess.ServiceController.dll
 D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\Application.dll
 D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\Domain.dll
 D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\Infrastructure.dll
 D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\Domain.pdb
-D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\Application.pdb
 D:\thuctap_ntq\console\prac_clean\Api\bin\Debug\net6.0\Infrastructure.pdb
 D:\thuctap_ntq\console\prac_clean\Api\obj\Debug\net6.0\Api.csproj.AssemblyReference.cache
 D:\thuctap_ntq\console\prac_clean\Api\obj\Debug\net6.0\Api.GeneratedMSBuildEditorConfig.editorconfig

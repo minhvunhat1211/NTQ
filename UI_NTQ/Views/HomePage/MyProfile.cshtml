@@ -33,10 +33,10 @@
                         </div>
                     </div>
                 </div>
-               
+
             </div>
             <div class="col-md-8">
-                <form asp-controller="HomePage" asp-action="Edit" asp-method="post">
+                <form id="formUser" asp-controller="HomePage" asp-action="Edit" asp-method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="card mb-3">
                         <div class="card-body">
@@ -44,8 +44,8 @@
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Lastname</h6>
                                 </div>
-                                <input id="lastName" type="text" asp-for="Lastname" class="col-sm-9 text-secondary" value="@Model.Lastname">
-                                <div asp-validation-for="Lastname" class="text-danger"></div>
+                                <input name="lastname" type="text" asp-for="Lastname" class="col-sm-9 text-secondary" value="@Model.Lastname">
+                                <span asp-validation-for="Lastname" class="text-danger"></span>
                                 <input id="id" type="hidden" class="col-sm-9 text-secondary" asp-for="Id" value="@Model.Id">
                             </div>
                             <hr>
@@ -53,8 +53,8 @@
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Firsname</h6>
                                 </div>
-                                <input id="firstName" asp-for="Firstname" type="text" class="col-sm-9 text-secondary" value="@Model.Firstname">
-                                <div asp-validation-for="Firstname" class="text-danger"></div>
+                                <input name="firstname" asp-for="Firstname" type="text" class="col-sm-9 text-secondary" value="@Model.Firstname">
+                                <span asp-validation-for="Firstname" class="text-danger"></span>
                             </div>
                             <hr>
                             <div class="row">
@@ -127,7 +127,7 @@
                             <hr>
                             <div class="row">
                                 <div class="col-xl-6">
-                                    <input type="submit"  class="btn btn-info" />
+                                    <input type="submit" class="btn btn-info" />
                                 </div>
                                 <div class="col-xl-6">
                                     <a class="btn btn-danger" asp-controller="User" asp-action="Logout">Logout</a>
@@ -143,31 +143,22 @@
 </div>
 
 @section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script>
-        $(document).ready(function () {
-            $("#edit").click(function () {
-                let firstName = $("#firstName").val();
-                let lastName = $("#lastName").val();
-                let id = $("#id").val();
-                console.log(firstName);
-                console.log(lastName);
-                console.log(id);
-                $.ajax({
-                    url: "https://localhost:7029/api/User/edit?edit?id=" + id,
-                    type: "PUT",
-                    data: {
-                        'firstName': firstName,
-                        'lastName': lastName
+        $().ready(function () {
+            $("#formUser").validate({
+                rules: {
+                    "lastname": {
+                        required: true,
+                        
                     },
-                    contentType: "application/json",
-                    success: function (data) {
-                        console.log(data);
+                    "firstname": {
+                        required: true,
+                        
                     }
-                });
-                debugger
+                }
             });
-
         });
     </script>
 }
-

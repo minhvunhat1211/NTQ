@@ -6,15 +6,15 @@ namespace UI_NTQ.Models.ProductModel
     {
         [Required]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Name khong duoc de trong")]
         public string? Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Slug khong duoc de trong")]
         public string? Slug { get; set; }
-        [Required]
+        [Required(ErrorMessage = "ProductDetail khong duoc de trong")]
         public string? ProductDetail { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Price khong duoc de trong")]
         public decimal? Price { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Trending khong duoc de trong")]
         public bool Trending { get; set; }
         public ICollection<IFormFile>? ProductImgs { get; set; }
     }

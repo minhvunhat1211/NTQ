@@ -5,13 +5,11 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{8A5DC13F-0FC5-4AF2-87DE-08C7EBA251BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{139C00BE-C66C-4412-9E67-AF3F1DF821EC}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{1D76AD97-7946-48A5-BC6E-31A8D2137EE6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{2D68B831-EC12-43A1-94EB-4082DDA4603E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_NTQ", "UI_NTQ\UI_NTQ.csproj", "{52F9A601-3454-4935-91E7-45C5D2559C37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI_NTQ", "UI_NTQ\UI_NTQ.csproj", "{52F9A601-3454-4935-91E7-45C5D2559C37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{8A5DC13F-0FC5-4AF2-87DE-08C7EBA251BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A5DC13F-0FC5-4AF2-87DE-08C7EBA251BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A5DC13F-0FC5-4AF2-87DE-08C7EBA251BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{139C00BE-C66C-4412-9E67-AF3F1DF821EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{139C00BE-C66C-4412-9E67-AF3F1DF821EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{139C00BE-C66C-4412-9E67-AF3F1DF821EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{139C00BE-C66C-4412-9E67-AF3F1DF821EC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1D76AD97-7946-48A5-BC6E-31A8D2137EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1D76AD97-7946-48A5-BC6E-31A8D2137EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D76AD97-7946-48A5-BC6E-31A8D2137EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU

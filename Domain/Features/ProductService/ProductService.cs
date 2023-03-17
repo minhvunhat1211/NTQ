@@ -197,6 +197,7 @@ namespace Domain.Features.ProductService
             try
             {
                 var findProductById = await _productRepository.GetByIdProduct(productId);
+                findProductById.Name = request.Name;
                 findProductById.Trending = request.Trending;
                 findProductById.Slug = request.Slug;
                 findProductById.ProductDetail = request.ProductDetail;
